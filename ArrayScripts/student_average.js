@@ -19,21 +19,13 @@ function studentAverage(kids) {
             sum += scores[juck];
         }
 
-    
         let studentAvg = sum / scores.length
-
         console.log(`${kids[i].name}'s Average: ${studentAvg.toFixed(2)}`)
-
         totalAverage += studentAvg;
 }
+
     let classAverage = (totalAverage / kids.length);
     return `The Class Average is: ${classAverage.toFixed(2)}`;
-
-};
-function allStudentAverage(kids) {
-    for (i = 0; i < kids.length; i++) {
-        studentAverage(kids);
-    }
 };
 
 console.log(studentAverage(students))
