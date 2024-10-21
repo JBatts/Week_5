@@ -1,5 +1,5 @@
 
-const product_string = "ZYZ:1234-L";
+const product_string = "ZYZ:1234-Large";
 
 function parsePartCode(part) {
     // Could use just split() or indexOf() and slice()
