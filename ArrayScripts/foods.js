@@ -7,7 +7,7 @@ let lunch = [
 function getTotal (event) {
     let subtotal = 0;
     for(i=0; i < event.length; i++) {
-        subtotal += event[i]["price"];
+        subtotal += event[i]["price"]; // ["price"] could also be written as .price
     };
     let tax = .08;
     let tip = .18;
