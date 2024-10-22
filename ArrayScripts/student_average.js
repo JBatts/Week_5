@@ -15,14 +15,14 @@ function studentAverage(kids) {
         scores = kids[i]["scores"];
         sum = 0
 
-        for (let juck = 0; juck < scores.length; juck++) {
-            sum += scores[juck];
+        for (let j = 0; j < scores.length; j++) {
+            sum += scores[j];
         }
 
         let studentAvg = sum / scores.length
         console.log(`${kids[i].name}'s Average: ${studentAvg.toFixed(2)}`)
         totalAverage += studentAvg;
-}
+    }
 
     let classAverage = (totalAverage / kids.length);
     return `The Class Average is: ${classAverage.toFixed(2)}`;
