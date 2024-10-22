@@ -79,10 +79,33 @@ function getRedCars() {
 function getExpReg() {
     expReg = [];
     for (let i = 0; i < vehicles.length; i++){
-        if(vehicles[i].registrationExpires < new Date("10-22-2024")){
-            redCars.push(vehicles[i].licenseNo)
+        if(vehicles[i].registrationExpires < new Date()){
+            expReg.push(vehicles[i].licenseNo)
         }
     }
-    return `If you have ${expReg.join(", ")} as your license plate your vehicle is red`
+    return `If you have ${expReg.join(", ")} as your license plate your vehicle registration has expired`
+}
+
+function getCapacity() {
+    carCapacity = [];
+    for (let i = 0; i < vehicles.length; i++){
+        if(vehicles[i].capacity >= 6){
+            carCapacity.push(vehicles[i].licenseNo)
+        }
+    }
+    return `If you have ${carCapacity.join(", ")} as your license plate your vehicle can hold at least 6 people`
+}
+
+function getLicense222() {
+    licensePlate = [];
+    for (let i = 0; i < vehicles.length; i++){
+        if(vehicles[i].licenseNo.endsWith("222")){
+            licensePlate.push(vehicles[i].licenseNo)
+        }
+    }
+    return `If you have ${licensePlate.join(", ")} as your license plate it ends with "222"`
 }
 console.log(getRedCars())
+console.log(getExpReg())
+console.log(getCapacity())
+console.log(getLicense222())
