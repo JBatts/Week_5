@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select name="airports" id="airports"><option value="?">Select an Airport</option></select>
+    <select name="states" id="states"><option value="?">Select a State</option></select>
+    <div id="code">?</div>
+    <div id="stateCode">?</div>
+</body>
+<script>
+    function optionFromObject(item, valueKey, displayKey) {
+        let element = document.createElement("option")
+        element.value = item[valueKey];
+        element.innerText = item[displayKey];
+        return element
+    }
+    let airportList = [
+        { code: "PDX", city: "Portland" },
+        { code: "ATL", city: "Atlanta" },
+        { code: "SEA", city: "Seattle" },
+        { code: "ORL", city: "Orlando" },
+    ];
+
+    
+    airportList = airportList.sort((a, b) => a.code < b.code ? -1 : 0)
+    
+    for (let airport of airportList) {
+        airports.appendChild(optionFromObject(airport, "code", "city"))
+    };
+    
+    
+    airports.addEventListener("click", (e) => code.innerText = e.target.value)
+    
+    let stateList = [
+        { abrv: "OR", name: "Oregon" },
+        { abrv: "GA", name: "Georgia" },
+        { abrv: "FL", name: "Florida" },
+        { abrv: "TX", name: "Texas" },
+    ];
+
+    for (let state of stateList) {
+        states.appendChild(optionFromObject(state, "abrv", "name"))
+    };
+
+    states.addEventListener("click", (e) => stateCode.innerText = e.target.value)
+</script>
+
+</html>
