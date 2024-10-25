@@ -5,7 +5,6 @@ let menuObject = {
     desserts: ["Cheesecake", "Chocolate Cake", "Snickerdoodle Cookie"],
 };
 
-
 // console.log(menuObject.drinksList)
 
 for (key in menuObject) {
@@ -16,7 +15,6 @@ for (key in menuObject) {
         console.log("\t\t", i,  "#", text)
         i++;
     }
-
 
     // for (let i = 0; i < list.length; i++) {
     //     const text = list[i]
