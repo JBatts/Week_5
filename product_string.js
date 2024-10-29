@@ -1,9 +1,9 @@
 
-const product_string = "ZYZ:1234-Large";
+const codeString = "ZYZ:1234-Large";
 
-function parsePartCode(part) {
+function parsePartCode(code) {
     // Could use just split() or indexOf() and slice()
-    let pieces_array = part.split(":");
+    let pieces_array = code.split(":");
 
     // Second split
     let final_two_string = pieces_array[1];
@@ -15,10 +15,10 @@ function parsePartCode(part) {
         size : final_two_arry[1]
     }
 }
-let partObject = parsePartCode(product_string)
+let part = parsePartCode(codeString)
 
 console.log(`
-    Code: ${partObject.supplierCode}
-    Number: ${partObject.productNumber}
-    Size: ${partObject.size}
+    Code: ${part.supplierCode}
+    Number: ${part.productNumber}
+    Size: ${part.size}
     `);
